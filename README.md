@@ -1,4 +1,4 @@
-# C++ Foundations 🚀
+# C++ Foundations 
 
 This repository documents my journey of learning **Modern C++** from scratch to an advanced level, with the long-term goal of becoming a **Software Engineer at a top tech company**.
 
