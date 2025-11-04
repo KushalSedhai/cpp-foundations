@@ -1,0 +1,75 @@
+# C++ Data Storage Concepts
+
+This document explains how C++ stores certain data types in memory, with a focus on `char` overflow behavior and negative number representation.
+
+---
+
+## 1. How Characters Are Stored in C++
+
+In C++, a `char` occupies **1 byte (8 bits)** and can store values from **0 to 255** (for `unsigned char`) or **-128 to 127** (for `signed char`). Internally, characters are stored as **numeric values**, which map to symbols using the **ASCII table**.
+
+### Example: Assigning a large number to `char`
+
+```cpp
+char ch = 123456;
+cout << ch; // Output: @
+```
+
+### Why does this happen?
+
+* `char` can only hold 1 byte
+* 123456 exceeds that range
+* C++ keeps only the lowest 8 bits of the number
+* `123456 % 256 = 64`
+* ASCII value **64 corresponds to '@'**
+
+So the stored byte is interpreted as the ASCII character `@`.
+
+**Key idea:** A `char` holds a byte, and the byte is treated as an ASCII code when printed.
+
+---
+
+## 2. How Negative Numbers Are Stored (Two's Complement)
+
+C++ represents negative integers using **two’s complement**. This allows efficient arithmetic in hardware.
+
+### Steps to represent a negative value
+
+1. Write the binary for the positive number
+2. Invert all bits (0 → 1, 1 → 0)
+3. Add 1
+
+### Example: `-5` in 8-bit two's complement
+
+```
++5      = 00000101
+Invert  = 11111010
+Add 1   = 11111011
+```
+
+So `-5` is stored as:
+
+```
+11111011
+```
+
+### When printed
+
+C++ interprets this bit pattern and displays:
+
+```
+-5
+```
+
+**Key idea:** Negative numbers are stored in binary using two's complement, and C++ converts the bit pattern back when printing.
+
+---
+
+## Summary
+
+* A `char` stores a single byte and prints based on ASCII
+* Overflowing a `char` wraps the value (`value % 256`)
+* C++ stores negative numbers using **two's complement** (invert bits + add 1)
+* When printed, C++ converts stored bits back into readable values
+
+These concepts explain why unusual output can appear when assigning values outside a type's storage range.
