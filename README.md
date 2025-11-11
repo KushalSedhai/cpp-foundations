@@ -18,8 +18,12 @@ I will be writing C++ every day and progressively building skills in:
 | Day | Topics Learned | Notes |
 |---|---|---|
 Day 1 | Basic syntax, I/O, compilation | ✅ Started the journey  
-Day 2 | 
-Day 3 | 
+Day 2 | Data Storage
+Day 3 | Condtionals
+Day 4 | Patterns
+Day 5 | Leetcodes Started
+Day 6 | Swicthcase, Functions
+
 
 (I will update this table as I go.)
 
