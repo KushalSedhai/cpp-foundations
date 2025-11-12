@@ -19,6 +19,8 @@ int main(){
     } */
    Arr(array, 3); 
    Arr(k, 20);
+
+   cout << INT_MIN << endl;
    
     
 }
