@@ -23,7 +23,12 @@ Day 3 | Condtionals
 Day 4 | Patterns
 Day 5 | Leetcodes Started
 Day 6 | Swicthcase, Functions
-
+day 7 |
+Day 9 |
+Day 10 |
+Day 11 |
+Day 12 |
+Day 13 | Time and space complexity
 
 (I will update this table as I go.)
 
